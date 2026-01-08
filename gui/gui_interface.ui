@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Main</class>
+ <widget class="QMainWindow" name="Main">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>558</width>
+    <height>695</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Monocraft</family>
+    <pointsize>8</pointsize>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>PyQt6 Template</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* ================================================
+   MODERN FLAT &amp; FRAMED - LIGHT THEME SYSTEM v1
+   Font: JetBrainsMonoNL Nerd Font Mono
+   Style: Rounded/Card | Accent: #1c68b5
+   ================================================ */
+
+/* --- MAIN WINDOW &amp; GLOBAL TEXT --- */
+QMainWindow, QWidget {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: &quot;Monocraft&quot;;
+    font-size: 7.9pt;
+    selection-background-color: #1c68b5;
+    selection-color: #ffffff;
+}
+
+/* --- CONTAINERS (Restored &quot;Cut&quot; Border) --- */
+QGroupBox {
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    margin-top: 8px;
+    /* Reduced from 20px to 8px to align title with border */
+    padding-top: 8px;
+}
+QGroupBox::title {
+    color: #000000;
+    subcontrol-origin: margin; /* Text sits in the margin */
+    left: 10px;
+    padding: 0 3px; /* Small padding covers the border behind the text */
+}
+
+/* --- PROGRESS BAR (Rounded) --- */
+QProgressBar {
+    border: 1px solid #bfbfbf;
+    border-radius: 4px; /* Rounds the container */
+    text-align: center;
+    background-color: #f5f5f5;
+    color: #000000;
+}
+QProgressBar::chunk {
+    background-color: #1c68b5;
+    border-radius: 4px; /* Rounds the internal bar */
+}
+
+/* --- BUTTONS --- */
+QPushButton {
+    /* DEFAULT STATE (LIGHT GRAY) */
+    background-color: #e1e1e1;
+    color: #000000;
+
+    /* Geometry */
+    border-radius: 4px;
+    padding: 6px 16px;
+
+    /* IMPORTANT: Create a 2px invisible border.
+       We color this border match the background so the button stays the 
+       same size when the border turns dark on hover.
+    */
+    border: 1px solid #e1e1e1; 
+}
+
+/* GLOBAL HOVER (Applies to the default Light Gray button) */
+QPushButton:hover {
+    background-color: #eeeeee;
+    /* Lighten the Gray */
+    border-color: #333333;
+    /* The &quot;Pop&quot; (Dark Ring for contrast against light bg) */
+    color: #000000;
+}
+
+QPushButton:pressed {
+    background-color: #cccccc;
+    border-color: #cccccc;
+}
+
+/* --- INPUT FIELDS --- */
+QLineEdit, QTextEdit, QPlainTextEdit, QSpinBox, QDoubleSpinBox, QComboBox {
+    background-color: #f5f5f5; /* Slightly darker than main window */
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    padding: 4px;
+    color: #000000;
+}
+QLineEdit:focus, QTextEdit:focus, QSpinBox:focus, QComboBox:focus {
+    border: 1px solid #1c68b5;
+}
+
+/* --- DATA VIEWS (Card Look) --- */
+QTableWidget, QListWidget, QTreeWidget {
+    background-color: #f5f5f5;
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    gridline-color: transparent;
+    outline: none;
+}
+QTableWidget::item, QListWidget::item, QTreeWidget::item {
+    padding: 5px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #000000;
+}
+QTableWidget::item:selected, QListWidget::item:selected, QTreeWidget::item:selected {
+    background-color: #1c68b5;
+    color: #ffffff;
+    border-bottom: 1px solid #1c68b5;
+}
+QHeaderView::section {
+    background-color: #e1e1e1;
+    color: #000000;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #bfbfbf;
+    font-weight: bold;
+}
+
+/* --- SCROLLBARS (Thin) --- */
+QScrollBar:vertical {
+    border: none;
+    background: #ffffff;
+    width: 10px;
+    margin: 0px 0px 0px 0px;
+    border-radius: 0px;
+}
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 5px;
+    margin: 2px;
+}
+QScrollBar::handle:vertical:hover {
+    background: #a8a8a8;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+QScrollBar:horizontal {
+    border: none;
+    background: #ffffff;
+    height: 10px;
+    margin: 0px 0px 0px 0px;
+    border-radius: 0px;
+}
+QScrollBar::handle:horizontal {
+    background: #c1c1c1;
+    min-width: 20px;
+    border-radius: 5px;
+    margin: 2px;
+}
+QScrollBar::handle:horizontal:hover {
+    background: #a8a8a8;
+}
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    width: 0px;
+}
+
+/* =========================================================================
+   CHECKBOXES &amp; RADIOS
+   Unchecked Hover = Dark Grey (#666666)
+   Checked Hover   = Bright Blue (#4fa4ff equivalent)
+   ========================================================================= */
+
+QCheckBox, QRadioButton {
+    spacing: 8px;
+    color: #000000;
+}
+
+/* --- CHECKBOX INDICATOR --- */
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    background-color: #f5f5f5;
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+}
+
+/* Hover on UNCHECKED box (Darker Grey) */
+QCheckBox::indicator:hover {
+    background-color: #e0e0e0;
+    border-color: #666666;
+}
+
+/* Checked State (Blue) */
+QCheckBox::indicator:checked {
+    background-color: #1c68b5;
+    border-color: #1c68b5;
+}
+
+/* Hover on CHECKED box (Brighter Blue) */
+QCheckBox::indicator:checked:hover {
+    background-color: #3a8ee6;
+    border-color: #3a8ee6;
+}
+
+
+/* --- RADIO INDICATOR --- */
+QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    background-color: #f5f5f5;
+    border: 1px solid #bfbfbf;
+    border-radius: 8px; /* Circle */
+}
+
+/* Hover on UNCHECKED circle (Darker Grey) */
+QRadioButton::indicator:hover {
+    background-color: #e0e0e0;
+    border-color: #666666;
+}
+
+/* Checked State (Blue) */
+QRadioButton::indicator:checked {
+    background-color: #1c68b5;
+    border-color: #1c68b5;
+}
+
+/* Hover on CHECKED circle (Brighter Blue) */
+QRadioButton::indicator:checked:hover {
+    background-color: #3a8ee6;
+    border-color: #f5f5f5; 
+    /* Keep the inner ring light! */
+}
+
+/* --- TAB WIDGET --- */
+QTabWidget::pane {
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    background-color: #ffffff;
+    top: -1px;
+}
+QTabBar::tab {
+    background: #e1e1e1;
+    color: #666666;
+    border: 1px solid transparent;
+    padding: 8px 16px;
+    margin-right: 2px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+QTabBar::tab:selected {
+    background: #ffffff;
+    color: #1c68b5;
+    border-bottom: 2px solid #1c68b5;
+}
+QTabBar::tab:hover {
+    background: #f0f0f0;
+    color: #000000;
+}
+
+/* --- MENUS --- */
+QMenuBar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #bfbfbf;
+}
+QMenuBar::item {
+    background-color: transparent;
+    padding: 8px 12px;
+    color: #000000;
+}
+QMenuBar::item:selected {
+    background-color: #e1e1e1;
+}
+QMenu {
+    background-color: #ffffff;
+    border: 1px solid #bfbfbf;
+    padding: 5px;
+    color: #000000;
+}
+QMenu::item {
+    padding: 5px 20px;
+}
+QMenu::item:selected {
+    background-color: #1c68b5;
+    color: #ffffff;
+    border-radius: 2px;
+}
+
+/* --- TOOLTIPS --- */
+QToolTip {
+    background-color: #f5f5f5;
+    color: #000000;
+    border: 1px solid #bfbfbf;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+/* --- SLIDERS --- */
+QSlider::groove:horizontal {
+    border: 1px solid #bfbfbf;
+    height: 4px;
+    background: #f5f5f5;
+    margin: 2px 0;
+    border-radius: 2px;
+}
+QSlider::handle:horizontal {
+    background: #1c68b5;
+    border: 1px solid #1c68b5;
+    width: 14px;
+    height: 14px;
+    margin: -6px 0;
+    border-radius: 7px;
+}
+
+/* =========================================================================
+   CONTENT BOX (Using QScrollArea)
+   ========================================================================= */
+
+QScrollArea {
+    background-color: #f5f5f5;      /* Inset Background */
+    border: 1px solid #bfbfbf;      /* Standard Border */
+    border-radius: 4px;             /* Rounded Corners */
+}
+
+/* This targets the &quot;viewport&quot; (the internal canvas that holds the widget) */
+QScrollArea &gt; QWidget &gt; QWidget {
+    background-color: #f5f5f5;
+}
+
+/* Optional: Clean up standard borders if they conflict */
+QScrollArea &gt; QWidget &gt; QWidget {
+    border: none;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Switch Theme will switch the icons color.</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>300</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>Buttons</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QPushButton" name="pushButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="baseSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Push Button</string>
+           </property>
+           <property name="icon">
+            <iconset resource="icons/breeze.qrc">
+             <normaloff>:/icons/dark/home_directory.svg</normaloff>:/icons/dark/home_directory.svg</iconset>
+           </property>
+           <property name="icon_name" stdset="0">
+            <string>home_directory</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radioButton">
+           <property name="text">
+            <string>Radio Button</string>
+           </property>
+           <property name="icon">
+            <iconset resource="icons/breeze.qrc">
+             <normaloff>:/icons/dark/ads_close_hover.svg</normaloff>:/icons/dark/ads_close_hover.svg</iconset>
+           </property>
+           <property name="icon_name" stdset="0">
+            <string>ads_close_hover</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QCheckBox" name="checkBox">
+           <property name="text">
+            <string>Check box</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_2">
+           <property name="text">
+            <string>Check box with an image</string>
+           </property>
+           <property name="icon">
+            <iconset resource="icons/breeze.qrc">
+             <normaloff>:/icons/dark/dialog_save.svg</normaloff>:/icons/dark/dialog_save.svg</iconset>
+           </property>
+           <property name="icon_name" stdset="0">
+            <string>dialog_save</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="title">
+       <string>Text edit</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Line edit :</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>10</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Plain text edit :</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPlainTextEdit" name="plainTextEdit"/>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="title">
+          <string>Sliders / Bars</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="1" column="2">
+           <widget class="QSlider" name="verticalSlider">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QProgressBar" name="progressBar">
+            <property name="value">
+             <number>24</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QSlider" name="horizontalSlider">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>558</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFIle">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionUsage"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <widget class="QMenu" name="menuSwitch_Theme">
+     <property name="title">
+      <string>Theme</string>
+     </property>
+     <addaction name="actionDark"/>
+     <addaction name="actionLight"/>
+    </widget>
+    <addaction name="menuSwitch_Theme"/>
+    <addaction name="actionToggle_Theme_Ctrl_T"/>
+   </widget>
+   <addaction name="menuFIle"/>
+   <addaction name="menuView"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionUsage">
+   <property name="text">
+    <string>Usage</string>
+   </property>
+  </action>
+  <action name="actionDark">
+   <property name="text">
+    <string>Dark</string>
+   </property>
+  </action>
+  <action name="actionLight">
+   <property name="text">
+    <string>Light</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionToggle_Theme_Ctrl_T">
+   <property name="text">
+    <string>Toggle Theme</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="icons/breeze.qrc"/>
+ </resources>
+ <connections/>
+</ui>

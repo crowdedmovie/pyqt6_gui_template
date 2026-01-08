@@ -1,0 +1,327 @@
+/* ================================================
+   MODERN FLAT & FRAMED - DARK THEME SYSTEM v2
+   Font: JetBrainsMonoNL Nerd Font Mono
+   Style: Rounded/Card | Accent: #2a82da
+   ================================================ */
+
+/* --- MAIN WINDOW & GLOBAL TEXT --- */
+QMainWindow, QWidget {
+    background-color: #2d2d2d;
+    color: #d2d2d2;
+    font-family: "JetBrainsMonoNL Nerd Font Mono";
+    font-size: 7.9pt;
+    selection-background-color: #2a82da;
+    selection-color: #ffffff;
+}
+
+/* --- CONTAINERS (Restored "Cut" Border) --- */
+QGroupBox {
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    margin-top: 8px; /* Reduced from 20px to 8px to align title with border */
+    padding-top: 8px;
+}
+QGroupBox::title {
+    color: #d2d2d2;
+    subcontrol-origin: margin; /* Text sits in the margin */
+    left: 10px;
+    padding: 0 3px; /* Small padding covers the border behind the text */
+}
+
+/* --- PROGRESS BAR (Rounded) --- */
+QProgressBar {
+    border: 1px solid #3a3a3a;
+    border-radius: 4px; /* Rounds the container */
+    text-align: center;
+    background-color: #1a1a1a;
+}
+QProgressBar::chunk {
+    background-color: #2a82da;
+    border-radius: 4px; /* Rounds the internal bar */
+}
+
+/* --- BUTTONS --- */
+QPushButton {
+    /* DEFAULT STATE (GRAY) */
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+
+    /* Geometry */
+    border-radius: 4px;
+    padding: 6px 16px;
+
+    /* IMPORTANT: Create a 2px invisible border.
+       We color this border match the background so the button stays the
+       same size when the border turns white on hover. */
+    border: 1px solid #3a3a3a;
+}
+
+/* GLOBAL HOVER (Applies to the default Gray button) */
+QPushButton:hover {
+    background-color: #4a4a4a; /* Lighten the Gray */
+    border-color: #ffffff;     /* The "Pop" (White Ring) */
+    color: #ffffff;
+}
+
+QPushButton:pressed {
+    background-color: #2a2a2a;
+    border-color: #2a2a2a;
+}
+
+/* --- INPUT FIELDS --- */
+QLineEdit, QTextEdit, QPlainTextEdit, QSpinBox, QDoubleSpinBox, QComboBox {
+    background-color: #1a1a1a;
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    padding: 4px;
+    color: #d2d2d2;
+}
+QLineEdit:focus, QTextEdit:focus, QSpinBox:focus, QComboBox:focus {
+    border: 1px solid #2a82da;
+}
+
+/* --- DATA VIEWS (Card Look) --- */
+QTableWidget, QListWidget, QTreeWidget {
+    background-color: #1a1a1a;
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    gridline-color: transparent;
+    outline: none;
+}
+QTableWidget::item, QListWidget::item, QTreeWidget::item {
+    padding: 5px;
+    border-bottom: 1px solid #2d2d2d;
+}
+QTableWidget::item:selected, QListWidget::item:selected, QTreeWidget::item:selected {
+    background-color: #2a82da;
+    color: #ffffff;
+    border-bottom: 1px solid #2a82da;
+}
+QHeaderView::section {
+    background-color: #2d2d2d;
+    color: #d2d2d2;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #3a3a3a;
+    font-weight: bold;
+}
+
+/* --- SCROLLBARS (Thin) --- */
+QScrollBar:vertical {
+    border: none;
+    background: #2d2d2d;
+    width: 10px;
+    margin: 0px 0px 0px 0px;
+    border-radius: 0px;
+}
+QScrollBar::handle:vertical {
+    background: #4a4a4a;
+    min-height: 20px;
+    border-radius: 5px;
+    margin: 2px;
+}
+QScrollBar::handle:vertical:hover {
+    background: #5a5a5a;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+QScrollBar:horizontal {
+    border: none;
+    background: #2d2d2d;
+    height: 10px;
+    margin: 0px 0px 0px 0px;
+    border-radius: 0px;
+}
+QScrollBar::handle:horizontal {
+    background: #4a4a4a;
+    min-width: 20px;
+    border-radius: 5px;
+    margin: 2px;
+}
+QScrollBar::handle:horizontal:hover {
+    background: #5a5a5a;
+}
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    width: 0px;
+}
+
+/* =========================================================================
+   CHECKBOXES & RADIOS
+   Unchecked Hover = Bright Grey (#4a4a4a)
+   Checked Hover   = Bright Blue (#4fa4ff)
+   ========================================================================= */
+
+QCheckBox, QRadioButton {
+    spacing: 8px;
+    color: #d2d2d2;
+}
+
+/* --- CHECKBOX INDICATOR --- */
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    background-color: #1a1a1a;
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+}
+
+/* Hover on UNCHECKED box (Bright Grey) */
+QCheckBox::indicator:hover {
+    background-color: #4a4a4a;
+    border-color: #5a5a5a;
+}
+
+/* Checked State (Blue) */
+QCheckBox::indicator:checked {
+    background-color: #2a82da;
+    border-color: #2a82da;
+}
+
+/* Hover on CHECKED box (Bright Blue) */
+QCheckBox::indicator:checked:hover {
+    background-color: #4fa4ff;
+    border-color: #4fa4ff;
+}
+
+
+/* --- RADIO INDICATOR --- */
+QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    background-color: #1a1a1a;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px; /* Circle */
+}
+
+/* Hover on UNCHECKED circle (Bright Grey) */
+QRadioButton::indicator:hover {
+    background-color: #4a4a4a;
+    border-color: #5a5a5a;
+}
+
+/* Checked State (Blue with Dark Inner Ring effect) */
+QRadioButton::indicator:checked {
+    background-color: #2a82da;
+}
+
+/* Hover on CHECKED circle (Bright Blue) */
+QRadioButton::indicator:checked:hover {
+    background-color: #4fa4ff;
+    border-color: #1a1a1a; /* Keep the inner ring dark! */
+}
+
+/* --- TAB WIDGET --- */
+QTabWidget::pane {
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    background-color: #2d2d2d;
+    top: -1px;
+}
+QTabBar::tab {
+    background: #2d2d2d;
+    color: #909090;
+    border: 1px solid transparent;
+    padding: 8px 16px;
+    margin-right: 2px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+QTabBar::tab:selected {
+    color: #2a82da;
+    border-bottom: 2px solid #2a82da;
+}
+QTabBar::tab:hover {
+    background: #3a3a3a;
+    color: #d2d2d2;
+}
+
+/* --- MENUS --- */
+QMenuBar {
+    background-color: #2d2d2d;
+    border-bottom: 1px solid #3a3a3a;
+}
+QMenuBar::item {
+    background-color: transparent;
+    padding: 8px 12px;
+}
+QMenuBar::item:selected {
+    background-color: #3a3a3a;
+}
+QMenu {
+    background-color: #2d2d2d;
+    border: 1px solid #3a3a3a;
+    padding: 5px;
+}
+QMenu::item {
+    padding: 5px 20px;
+}
+QMenu::item:selected {
+    background-color: #2a82da;
+    color: #ffffff;
+    border-radius: 2px;
+}
+
+/* --- TOOLTIPS --- */
+QToolTip {
+    background-color: #1a1a1a;
+    color: #d2d2d2;
+    border: 1px solid #3a3a3a;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+/* --- SLIDERS --- */
+QSlider::groove:horizontal {
+    border: 1px solid #3a3a3a;
+    height: 4px;
+    background: #1a1a1a;
+    margin: 2px 0;
+    border-radius: 2px;
+}
+QSlider::handle:horizontal {
+    background: #2a82da;
+    border: 1px solid #2a82da;
+    width: 14px;
+    height: 14px;
+    margin: -6px 0;
+    border-radius: 7px;
+}
+
+QSlider::groove:vertical {
+    border: 1px solid #3a3a3a;
+    width: 4px;
+    background: #1a1a1a;
+    margin: 0 2px;
+    border-radius: 2px;
+}
+QSlider::handle:vertical {
+    background: #2a82da;
+    border: 1px solid #2a82da;
+    width: 14px;
+    height: 14px;
+    margin: 0 -6px;
+    border-radius: 7px;
+}
+
+
+/* =========================================================================
+   CONTENT BOX (Using QScrollArea)
+   Usage: Drag a QScrollArea widget to use as a container for Images/Video.
+   ========================================================================= */
+
+QScrollArea {
+    background-color: #1a1a1a;      /* Dark Inset Background */
+    border: 1px solid #3a3a3a;      /* Standard Border */
+    border-radius: 4px;             /* Rounded Corners */
+}
+
+/* This targets the "viewport" (the internal canvas that holds the widget) */
+QScrollArea > QWidget > QWidget {
+    background-color: #1a1a1a;
+}
+
+/* Optional: Clean up standard borders if they conflict */
+QScrollArea > QWidget > QWidget {
+    border: none;
+}
