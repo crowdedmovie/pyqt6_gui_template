@@ -71,7 +71,7 @@ class MainWindow(QMainWindow):
         """Displays the About popup."""
         about_text = (
             "<h3>PyQt6 App Template</h3>"
-            "<p>Version 1.0.0</p>"
+            "<p>Version 1.0</p>"
             "<p>A modern GUI template featuring Dark/Light themes & icons.</p>"
             "<p>Created by <b>crowdedmovie</b></p>"
             "<br>"
