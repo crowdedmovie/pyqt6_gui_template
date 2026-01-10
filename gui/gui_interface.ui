@@ -12,10 +12,10 @@
   </property>
   <property name="font">
    <font>
-    <family>Monocraft</family>
+    <family>JetBrains Mono</family>
     <pointsize>8</pointsize>
-    <weight>75</weight>
-    <bold>true</bold>
+    <weight>50</weight>
+    <bold>false</bold>
    </font>
   </property>
   <property name="windowTitle">
@@ -24,7 +24,7 @@
   <property name="styleSheet">
    <string notr="true">/* ================================================
    MODERN FLAT &amp; FRAMED - LIGHT THEME SYSTEM v1
-   Font: JetBrainsMonoNL Nerd Font Mono
+   Font: JetBrains Mono
    Style: Rounded/Card | Accent: #1c68b5
    ================================================ */
 
@@ -32,7 +32,7 @@
 QMainWindow, QWidget {
     background-color: #ffffff;
     color: #000000;
-    font-family: &quot;Monocraft&quot;;
+    font-family: &quot;JetBrains Mono&quot;;
     font-size: 7.9pt;
     selection-background-color: #1c68b5;
     selection-color: #ffffff;

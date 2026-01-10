@@ -1,6 +1,6 @@
 /* ================================================
    MODERN FLAT & FRAMED - LIGHT THEME SYSTEM v1
-   Font: JetBrainsMonoNL Nerd Font Mono
+   Font: JetBrains Mono
    Style: Rounded/Card | Accent: #1c68b5
    ================================================ */
 
@@ -8,7 +8,7 @@
 QMainWindow, QWidget {
     background-color: #ffffff;
     color: #000000;
-    font-family: "JetBrainsMonoNL Nerd Font Mono";
+    font-family: "JetBrains Mono";
     font-size: 7.9pt;
     selection-background-color: #1c68b5;
     selection-color: #ffffff;
