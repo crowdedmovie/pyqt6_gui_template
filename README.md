@@ -4,6 +4,8 @@
 ![PyQt6](https://img.shields.io/badge/PyQt-6-green.svg)
 ![License](https://img.shields.io/badge/license-GPLv3-red.svg)
 
+# ! Refer to this repo instead => https://github.com/crowdedmovie/pyqt6-material-tplt ! 
+
 A simple, modern, and extensible template for creating GUI applications with PyQt6. It features a theming system with dark and light modes, where icons automatically adapt to the selected color scheme.
 
 ## Features
